@@ -17,7 +17,7 @@ import java.util.*;
 
 @RestController
 public class HelloController {
-    AppInstance.AFConfig config = new AppInstance.AFConfig("https://microapps.appsfly.io", "1389191907067771", "0122899b-13ef-4770-9bb3-d7b8d6c72cd6");
+    AppInstance.AFConfig config = new AppInstance.AFConfig("https://microapps.appsfly.io", "2756868445626273", "3a547fb1-f5c5-4185-af50-363fb1c3cf64");
 
     @RequestMapping(value="/", method = RequestMethod.POST)
     public String index(HttpServletRequest payload) throws IOException {
@@ -31,7 +31,7 @@ public class HelloController {
 
         System.out.println(jsonObject);
 
-        AppInstance travelProvider = new AppInstance(config, "com.cleartrip.ms-test-cta-server-transaction");
+        AppInstance travelProvider = new AppInstance(config, "io.appsfly.ma-cta-gadag-test");
         try {
             return (travelProvider.execSync("confirm_booking", jsonObject, "generic")).toString();
         } catch (AppsflyException e) {
