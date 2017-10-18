@@ -31,7 +31,7 @@ public class HelloController {
 
         System.out.println(jsonObject);
 
-        AppInstance travelProvider = new AppInstance(config, "io.appsfly.ma-cta-gadag-test");
+        AppInstance travelProvider = new AppInstance(config, "io.appsfly.dcb-bank-micro-service-demo");
         try {
             return (travelProvider.execSync("confirm_booking", jsonObject, "generic")).toString();
         } catch (AppsflyException e) {
