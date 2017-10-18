@@ -21,8 +21,6 @@ public class HelloController {
 
     @RequestMapping(value="/", method = RequestMethod.POST)
     public String index(HttpServletRequest payload) throws IOException {
-        System.out.println("Test");
-        System.out.println(payload);
         byte[] bytes = IOUtils.toByteArray(payload.getInputStream());
         String data = new String(bytes);
         System.out.println(data);
@@ -33,7 +31,9 @@ public class HelloController {
 
         AppInstance travelProvider = new AppInstance(config, "io.appsfly.dcb-bank-micro-service-demo");
         try {
-            return (travelProvider.execSync("confirm_booking", jsonObject, "generic")).toString();
+            String response = travelProvider.execSync("confirm_booking", jsonObject, "generic").toString();
+            System.out.println(response);
+            return response;
         } catch (AppsflyException e) {
             e.printStackTrace();
             return null;
