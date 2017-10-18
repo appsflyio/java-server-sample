@@ -35,7 +35,7 @@
         <dependency>
             <groupId>com.github.appsflyio</groupId>
             <artifactId>devkit-javautils</artifactId>
-            <version>0.0.5</version>
+            <version>0.0.5-beta</version>
         </dependency>
 
         <dependency>
